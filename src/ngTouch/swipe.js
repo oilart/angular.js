@@ -34,7 +34,7 @@ ngTouch.factory('$swipe', [function() {
     'touch': {
       start: 'touchstart',
       move: 'touchmove',
-      end: 'touchend',
+      end: 'touchend MSPointerOut',
       cancel: 'touchcancel'
     }
   };
@@ -90,7 +90,7 @@ ngTouch.factory('$swipe', [function() {
      * `move` is called on `mousemove` and `touchmove` after the above logic has determined that
      * a swipe is in progress.
      *
-     * `end` is called when a swipe is successfully completed with a `touchend` or `mouseup`.
+     * `end` is called when a swipe is successfully completed with a `touchend`, `mouseup` or `MSPointerOut`.
      *
      * `cancel` is called either on a `touchcancel` from the browser, or when we begin scrolling
      * as described above.
